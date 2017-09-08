@@ -7,29 +7,30 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('Given 1 should return 1', () => {
-  //---------------Set up test pack-------------------
-  var fizzBuzz = new App();
-  var input = 1;
-  //---------------Execute Test ----------------------
-  var result = fizzBuzz.isfizzbuzz(input);
-  //---------------Test Result -----------------------
-  expect(result).toBe(1);
-});
+const notDivisibleBy3and5 = [1,2,4,7,8];
+/*
+const divisibleBy3 = [3,6,9];
+const divisibleBy3 = [5,10,15];
+*/
 
-it('Given 2 should return 2', () => {
+it('Given numbers not divisible by both 3 and 5 should return number', () => {
   //---------------Set up test pack-------------------
-  var fizzBuzz = new App();
-  var input = 2;
+  var input = 0;
+  var fizzBuzz = CreateApp();
+  var expected = 0;
+  notDivisibleBy3and5.map((fizzBuzzNumber) => {
+    input = fizzBuzzNumber;
+    expected = fizzBuzzNumber;
+  });
   //---------------Execute Test ----------------------
   var result = fizzBuzz.isfizzbuzz(input);
   //---------------Test Result -----------------------
-  expect(result).toBe(2);
+  expect(result).toBe(expected);
 });
 
 it('Given 3 should return Fizz', () => {
   //---------------Set up test pack-------------------
-  var fizzBuzz = new App();
+  var fizzBuzz = CreateApp();
   var input = 3;
   //---------------Execute Test ----------------------
   var result = fizzBuzz.isfizzbuzz(input);
@@ -39,7 +40,7 @@ it('Given 3 should return Fizz', () => {
 
 it('Given 5 should return Buzz', () => {
   //---------------Set up test pack-------------------
-  var fizzBuzz = new App();
+  var fizzBuzz = CreateApp();
   var input = 5;
   //---------------Execute Test ----------------------
   var result = fizzBuzz.isfizzbuzz(input);
@@ -49,10 +50,14 @@ it('Given 5 should return Buzz', () => {
 
 it('Given 5 should return Buzz', () => {
   //---------------Set up test pack-------------------
-  var fizzBuzz = new App();
+  var fizzBuzz = CreateApp();
   var input = 6;
   //---------------Execute Test ----------------------
   var result = fizzBuzz.isfizzbuzz(input);
   //---------------Test Result -----------------------
   expect(result).toBe('Fizz');
 });
+
+function CreateApp(){
+  return new App();
+}
