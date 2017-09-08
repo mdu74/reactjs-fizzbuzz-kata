@@ -8,6 +8,7 @@ it('renders without crashing', () => {
 });
 
 const notDivisibleBy3and5 = [1,2,4,7,8];
+const divisibleBy3 = [3,6,9,12];
 /*
 const divisibleBy3 = [3,6,9];
 const divisibleBy3 = [5,10,15];
@@ -28,10 +29,13 @@ it('Given numbers not divisible by both 3 and 5 should return number', () => {
   expect(result).toBe(expected);
 });
 
-it('Given 3 should return Fizz', () => {
+it('Given numbers divisible by 3 should return Fizz', () => {
   //---------------Set up test pack-------------------
+  var input = 0;
   var fizzBuzz = CreateApp();
-  var input = 3;
+  divisibleBy3.map((fizzBuzzNumber) => {
+    input = fizzBuzzNumber;
+  });
   //---------------Execute Test ----------------------
   var result = fizzBuzz.isfizzbuzz(input);
   //---------------Test Result -----------------------
@@ -46,16 +50,6 @@ it('Given 5 should return Buzz', () => {
   var result = fizzBuzz.isfizzbuzz(input);
   //---------------Test Result -----------------------
   expect(result).toBe('Buzz');
-});
-
-it('Given 5 should return Buzz', () => {
-  //---------------Set up test pack-------------------
-  var fizzBuzz = CreateApp();
-  var input = 6;
-  //---------------Execute Test ----------------------
-  var result = fizzBuzz.isfizzbuzz(input);
-  //---------------Test Result -----------------------
-  expect(result).toBe('Fizz');
 });
 
 function CreateApp(){
