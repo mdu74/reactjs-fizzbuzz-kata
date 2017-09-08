@@ -46,3 +46,13 @@ it('Given 5 should return Buzz', () => {
   //---------------Test Result -----------------------
   expect(result).toBe('Buzz');
 });
+
+it('Given 5 should return Buzz', () => {
+  //---------------Set up test pack-------------------
+  var fizzBuzz = new App();
+  var input = 6;
+  //---------------Execute Test ----------------------
+  var result = fizzBuzz.isfizzbuzz(input);
+  //---------------Test Result -----------------------
+  expect(result).toBe('Fizz');
+});
