@@ -14,24 +14,19 @@
   color: white;
 }
 
-<<<<<<< HEAD
-=======
 .App-title {
   font-size: 1.5em;
 }
 
->>>>>>> adding user interaction to my fizzbuzz
 .App-intro {
   font-size: large;
+}
+
+.fizz-or-buzz{
+  font-size: 10em;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-<<<<<<< HEAD
-=======
-.fizz-or-buzz{
-  font-size: 10em;
-}
->>>>>>> adding user interaction to my fizzbuzz
